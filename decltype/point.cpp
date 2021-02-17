@@ -15,7 +15,7 @@ int main() {
 
   for(int i = 0; i != 5; ++i) {
     std::cout << authAndAccess(a, i) << ' '
-              << authAndAccess(a, i) << ' '
-              << authAndAccess(a, i) << '\n';
+              << authAndAccess(v, i) << ' '
+              << authAndAccess(d, i) << '\n';
   }
 }
