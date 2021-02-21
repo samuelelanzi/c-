@@ -27,16 +27,16 @@ int main()
     indeterminate = 0xFFFFFFFF
   };
 
+  enum class UserInfoFields { uiName, uiEmail, uiReputation };
+
   using UserInfo = std::tuple<std::string, std::string, std::size_t>;
   UserInfo uInfo {"samuelelanzi", "samuelelanzi00@icloud.com", 2};
 
-  auto username = std::get<0>(uInfo);
-  auto email = std::get<1>(uInfo);
-  auto reputation = std::get<2>(uInfo);
+  auto username = std::get<static_cast<std::size_t>(UserInfoFields::uiName)>(uInfo);
+  auto email = std::get<static_cast<std::size_t>(UserInfoFields::uiEmail)>(uInfo);
+  auto reputation = std::get<static_cast<std::size_t>(UserInfoFields::uiReputation)>(uInfo);
 
   std::cout << "username: " << username 
             << "\nemail: " << email 
             << "\nreputation: " << reputation << '\n';
-
-  
 }
